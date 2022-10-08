@@ -51,3 +51,7 @@
 .login-form--mobile .login-form__submit {
   width: 100%;
 }
+.login-form__group--checkbox .error {
+  margin-top: .5rem;
+  color: #d32f2f;
+}

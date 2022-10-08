@@ -1,13 +1,10 @@
 import React from 'react'
-import { Grid, useMediaQuery, useTheme } from '@mui/material'
+import { Grid } from '@mui/material'
 import { Banner, LoginForm, Navbar } from '../../components'
 
 import './Login.css'
 
 export const Login = () => {
-
-  const theme = useTheme()
-  const matches = useMediaQuery(theme.breakpoints.up("md"))
 
   return (
     <Grid

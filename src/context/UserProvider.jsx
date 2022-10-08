@@ -6,13 +6,24 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({
     name: '',
     typeDocument: '',
-    numberDocument: null,
-    numberPhone: null,
+    document: null,
+    phone: null,
     license: ''
   })
 
+  const authUser = (typeDocument, document, phone, license, terms) => {
+    console.log({ typeDocument, document, phone, license, terms })
+  }
+
   return (
-    <UserContext.Provider value={{ hola:'mundo' }}>
+    <UserContext.Provider
+      value={
+        {
+          user,
+          authUser
+        }
+      }
+    >
       { children }
     </UserContext.Provider>
   )
