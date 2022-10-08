@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Box, Tab, Tabs, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { TabPanel, CoverageItem } from '../'
 
 import './Coverages.css'
 
-export const Coverages = ({ coverageItems, onCoverageSelected }) => {
+export const Coverages = ({ coverageItems, onCoverageSelected, insuredAmount }) => {
 
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up("md"))
 
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0)
+
+  const filterCoverages = coverageItems.filter(item => {
+    return (insuredAmount <= item.rules?.max) && item
+  })
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -37,7 +41,7 @@ export const Coverages = ({ coverageItems, onCoverageSelected }) => {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <CoverageItem items={ coverageItems } onCoverageSelected={ onCoverageSelected } />
+        <CoverageItem items={ filterCoverages } onCoverageSelected={ onCoverageSelected } />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

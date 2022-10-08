@@ -1792,6 +1792,15 @@ asynckit@^0.4.0:
   resolved "https://globaldevtools.bbva.com/artifactory/api/npm/npm-repo/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
+axios@^1.1.2:
+  version "1.1.2"
+  resolved "https://globaldevtools.bbva.com/artifactory/api/npm/npm-repo/axios/-/axios-1.1.2.tgz#8b6f6c540abf44ab98d9904e8daf55351ca4a331"
+  integrity sha1-i29sVAq/RKuY2ZBOja9VNRykozE=
+  dependencies:
+    follow-redirects "^1.15.0"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
+
 babel-jest@^29.1.2:
   version "29.1.2"
   resolved "https://globaldevtools.bbva.com/artifactory/api/npm/npm-repo/babel-jest/-/babel-jest-29.1.2.tgz#540d3241925c55240fb0c742e3ffc5f33a501978"
@@ -2493,6 +2502,11 @@ find-up@^4.0.0, find-up@^4.1.0:
   dependencies:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
+
+follow-redirects@^1.15.0:
+  version "1.15.2"
+  resolved "https://globaldevtools.bbva.com/artifactory/api/npm/npm-repo/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
+  integrity sha1-tGCGQUS6Y/JoEJbydMTlcCbaLBM=
 
 form-data@^4.0.0:
   version "4.0.0"
@@ -3559,6 +3573,11 @@ prop-types@^15.6.2, prop-types@^15.8.1:
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.13.1"
+
+proxy-from-env@^1.1.0:
+  version "1.1.0"
+  resolved "https://globaldevtools.bbva.com/artifactory/api/npm/npm-repo/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
+  integrity sha1-4QLxbKNVQkhldV0sno6k8k1Yw+I=
 
 psl@^1.1.33:
   version "1.9.0"

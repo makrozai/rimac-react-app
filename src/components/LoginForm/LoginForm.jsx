@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { Button, Checkbox, FormControl, FormControlLabel, FormGroup, MenuItem, Select, TextField, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Button, Checkbox, CircularProgress, FormControl, FormControlLabel, FormGroup, MenuItem, Select, TextField, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { useForm } from '../../hooks/useForm'
 import { UserContext } from '../../context/UserContext'
 
@@ -11,7 +12,8 @@ export const LoginForm = ({ }) => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up("md"))
 
-  const { authUser } = useContext(UserContext)
+  const { isLoading, authUser } = useContext(UserContext)
+  const navigate = useNavigate()
 
   const { typeDocument, document, phone, license, terms, errors, onInputChange, validationForm } = useForm({
     typeDocument: 'DNI',
@@ -21,11 +23,11 @@ export const LoginForm = ({ }) => {
     terms: false
   })
   
-  const handleSubmit = () => {
-    if (validationForm()) {
-      authUser(typeDocument, document, phone, license, terms)
-    } else {
-      console.log('hay un error')
+  const handleSubmit = async () => {
+    if (!validationForm()) {
+      const user = await authUser(typeDocument, document, phone, license, terms)
+      
+      user && navigate('/dashboard')
     }
   }
 
@@ -99,15 +101,28 @@ export const LoginForm = ({ }) => {
           }
         </FormGroup>
         <div>
-          <Button
-            variant="contained"
-            size="large"
-            className='login-form__submit'
-            color='secondary'
-            onClick={ (e) => handleSubmit() }
-          >
-            COTÍZALO
-          </Button>
+          {
+            isLoading ? (
+              <Button
+                variant="contained"
+                disabled
+                size="large"
+                className='login-form__submit'
+              >
+                <CircularProgress size={14} />
+              </Button>
+            ) : (
+              <Button
+                variant="contained"
+                size="large"
+                className='login-form__submit'
+                color='secondary'
+                onClick={ (e) => handleSubmit() }
+              >
+                COTÍZALO
+              </Button>
+            )
+          }
         </div>
       </FormControl>
     </div>

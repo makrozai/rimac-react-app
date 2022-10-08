@@ -46,6 +46,7 @@
 }
 .login-form__submit {
   padding: 1rem 4rem !important;
+  min-height: 3.8rem;
   margin-top: 2rem !important;
 }
 .login-form--mobile .login-form__submit {

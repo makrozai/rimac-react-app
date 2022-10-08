@@ -36,7 +36,7 @@ export const useForm = ( initialForm = {} ) => {
 
     setErrors(stateValue)
 
-    return Object.values(stateValue).find(value => value === false)
+    return Object.values(stateValue).find(value => value === true)
   }
 
   return {
