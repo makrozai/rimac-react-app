@@ -2,10 +2,15 @@ import React, { useState } from 'react'
 import { UserService } from '../services/UserServices'
 import { UserContext } from './UserContext'
 
+const baseCoverageAmount = 20
+
 export const UserProvider = ({ children }) => {
 
   const [user, setUser] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+  const [insured, setInsured] = useState(16000)
+  const [coverageSubTotal, setCoverageSubTotal] = useState([])
+  const [coverageTotal, setCoverageTotal] = useState(baseCoverageAmount)
 
   const authUser = async (typeDocument, document, phone, license, terms) => {
     setIsLoading(true)
@@ -28,6 +33,23 @@ export const UserProvider = ({ children }) => {
       console.log(error)
     }
   }
+  
+  const processSubTotal = (coverages, insuredValue = insured) => {
+    
+    setCoverageSubTotal(coverages)
+
+    const subTotal = coverages.map(item => {
+      console.log(item.addedState, insuredValue <= item.rules.max, insuredValue)
+      return (item.addedState && insuredValue <= item.rules.max) ? item.price : 0
+    }).reduce((prev, curr) => prev + curr, 0);
+
+    setCoverageTotal(subTotal + baseCoverageAmount)
+  }
+
+  const changeInsured = (amount) => {
+    setInsured(amount)
+    coverageSubTotal.length > 1 && processSubTotal(coverageSubTotal, amount)
+  }
 
   return (
     <UserContext.Provider
@@ -35,6 +57,11 @@ export const UserProvider = ({ children }) => {
         {
           user,
           isLoading,
+          insured,
+          coverageSubTotal,
+          coverageTotal,
+          processSubTotal,
+          changeInsured,
           authUser
         }
       }

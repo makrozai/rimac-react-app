@@ -47,7 +47,6 @@ const coverageItems = [
   }
 ]
 
-const baseCoverageAmount = 20
 const baseRange = {
   min: 12500,
   max: 16500,
@@ -58,31 +57,17 @@ export const Dashboard = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up("md"))
 
-  const { user } = useContext(UserContext)
+  const { user, insured, changeInsured, processSubTotal, coverageTotal } = useContext(UserContext)
   const navigate = useNavigate()
-
-  const [coverageAmount, setCoverageAmount] = useState(baseCoverageAmount)
-  const [insuredValue, setInsuredValue] = useState(baseRange.min)
 
   const firstName = user.name.split(' ')[0]
 
-  const handleCoverage = (coverages) => {
-
-    console.log(coverages)
-
-    const subTotal = coverages.map(item => {
-      return item.addedState ? item.price : 0
-    }).reduce((prev, curr) => prev + curr, 0);
-
-    setCoverageAmount(subTotal + baseCoverageAmount)
-  }
-
   const handleChangeInsured = (amount) => {
-    setInsuredValue(amount)
+    changeInsured(amount)
   }
   
   const handleSubmit = () => {
-    console.log({ insuredValue, coverageAmount })
+    console.log({ insured })
   }
 
   return (
@@ -145,15 +130,15 @@ export const Dashboard = () => {
             <InsuredCounter
               min={ baseRange.min }
               max={ baseRange.max }
-              defaultAmount={ insuredValue }
+              defaultAmount={ insured }
               onChangeAmount={ handleChangeInsured }
             />
           </div>
 
           <Coverages
             coverageItems={ coverageItems }
-            onCoverageSelected={ handleCoverage }
-            insuredAmount={ insuredValue }
+            onCoverageSelected={ processSubTotal }
+            insuredAmount={ insured }
           />
         </div>
       </Grid>
@@ -163,7 +148,7 @@ export const Dashboard = () => {
         md={3}
         className='dashboard__amount'
       >
-        <CoverageTotal amount={ coverageAmount } onSubmit={ handleSubmit } />
+        <CoverageTotal amount={ coverageTotal } onSubmit={ handleSubmit } />
       </Grid>
     </Grid>
   )

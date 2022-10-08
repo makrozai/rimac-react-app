@@ -13,7 +13,7 @@ export const Coverages = ({ coverageItems, onCoverageSelected, insuredAmount }) 
   const [value, setValue] = useState(0)
 
   const filterCoverages = coverageItems.filter(item => {
-    return (insuredAmount <= item.rules?.max) && item
+    return (insuredAmount <= item.rules.max) && item
   })
 
   const handleChange = (event, newValue) => {

@@ -18,7 +18,7 @@ export const CoverageItem = ({ items, onCoverageSelected }) => {
   const matches = useMediaQuery(theme.breakpoints.up("sm"))
 
   const formatValues = items.map(item => {
-    return { id: item.id, price: item.price, addedState: false, openItem: false }
+    return { id: item.id, price: item.price, addedState: false, openItem: false, rules: item.rules }
   })
 
   const [coverageValues, setCoverageValues] = useState(formatValues)
