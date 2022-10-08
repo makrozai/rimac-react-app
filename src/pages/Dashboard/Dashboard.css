@@ -1,0 +1,62 @@
+.dashboard {
+  color: #676F8F;
+}
+.dashboard__navbar{
+  background-color: #F7F8FC;
+  width: 100%;
+}
+.dashboard__body {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem 6rem;
+}
+.dashboard__body--mobile {
+  max-width: 100%;
+  padding: 0 0 6rem;
+}
+.dashboard__body--mobile main {
+  background-color: #F7F8FC;
+  padding: 3rem 1rem;
+}
+.dashboard__body--mobile .dashboard__heading {
+  margin-top: 0;
+}
+.dashboard__body--mobile .dashboard__heading h4{
+  color: #494F66;
+  font-size: 1.9rem;
+}
+.dashboard__body--mobile .dashboard__heading h6 {
+  font-size: 1.15rem;
+}
+.dashboard__back {
+  display: flex;
+  padding: 0;
+  margin-top: 3rem;
+  align-items: center;
+  color: #A9AFD9;
+}
+.dashboard__back .button {
+  color: #FC606B;
+  border: 1px solid #FC606B;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: .5rem;
+}
+.dashboard__back .button svg{
+  width: 1rem;
+  height: 1rem;
+}
+.dashboard__heading {
+  margin: 1.5rem 0;
+}
+.dashboard__heading span{
+  display: inline-block;
+  color: #FF1C44;
+  margin-bottom: .5rem;
+}
+.dashboard__amount {
+  padding-top: 3rem;
+}
+.dashboard__insured {
+  padding: 0 1rem;
+}
