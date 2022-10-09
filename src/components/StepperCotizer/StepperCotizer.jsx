@@ -5,11 +5,17 @@ import { IconButton, LinearProgress, Step, StepLabel, Stepper, Typography, useMe
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 
 import './StepperCotizer.css'
+import { useNavigate } from 'react-router-dom'
 
 export const StepperCotizer = ({ steps, selectStep }) => {
 
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("md"));
+  const navigate = useNavigate()
+
+  const handleBack = () => {
+    navigate('/')
+  }
 
   return (
     <>
@@ -32,7 +38,7 @@ export const StepperCotizer = ({ steps, selectStep }) => {
         </Stepper>
       ): (
         <div className="stepper-cotizer stepper-cotizer--mobile">
-          <IconButton className='button'>
+          <IconButton className='button' onClick={ handleBack }>
             <ArrowBackIosNewIcon />
           </IconButton>
           <Typography variant='body2'>

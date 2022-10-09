@@ -6,7 +6,7 @@ const baseCoverageAmount = 20
 
 export const UserProvider = ({ children }) => {
 
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [insured, setInsured] = useState(16000)
   const [coverageSubTotal, setCoverageSubTotal] = useState([])
@@ -30,7 +30,7 @@ export const UserProvider = ({ children }) => {
 
     } catch (error) {
       setIsLoading(false)
-      console.log(error)
+      console.error(error)
     }
   }
   
@@ -39,7 +39,6 @@ export const UserProvider = ({ children }) => {
     setCoverageSubTotal(coverages)
 
     const subTotal = coverages.map(item => {
-      console.log(item.addedState, insuredValue <= item.rules.max, insuredValue)
       return (item.addedState && insuredValue <= item.rules.max) ? item.price : 0
     }).reduce((prev, curr) => prev + curr, 0);
 

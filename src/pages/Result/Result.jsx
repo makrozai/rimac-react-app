@@ -1,5 +1,6 @@
 import { Button, Grid, Typography, useMediaQuery, useTheme } from '@mui/material'
-import React from 'react'
+import React, { useContext } from 'react'
+import { UserContext } from '../../context/UserContext'
 import { Navbar } from '../../components'
 
 import bannerResult from '../../assets/banner_result.svg'
@@ -12,6 +13,12 @@ export const Result = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up("md"))
 
+  const { user, insured, coverageSubTotal, coverageTotal } = useContext(UserContext)
+
+  const handleSubmit = () => {
+    console.log({ user, insured, coverageSubTotal, coverageTotal })
+  }
+  
   return (
     <Grid
       container
@@ -25,9 +32,7 @@ export const Result = () => {
         md={5}
       >
         <div className={ `result__banner ${ matches ? '': 'result__banner--mobile' }` }>
-          {
-            matches ? <img src={ bannerResult } alt="" /> : <img src={ bannerResultMobile } alt="" />
-          }
+          <img src={ matches ? bannerResult : bannerResultMobile } alt="" />
         </div>
       </Grid>
       <Grid
@@ -42,13 +47,14 @@ export const Result = () => {
           </Typography>
           <Typography variant='h6'>
             Enviaremos la confirmación de compra de tu Plan Vehícular Tracking a tu correo:
-            <span>joel.sanchez@gmail.com</span>
+            <span>{ user.email.toLowerCase() }</span>
           </Typography>
           <Button
             variant="contained"
             size="large"
             className='result__submit'
             color='secondary'
+            onClick={ handleSubmit }
           >
             cómo usar mi seguro
           </Button>
