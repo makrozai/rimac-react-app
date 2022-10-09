@@ -42,3 +42,4 @@ export const baseRange = {
   min: 12500,
   max: 16500,
 }
+export const baseCoverageAmount = 20

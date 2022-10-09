@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
 import { UserService } from '../services/UserServices'
+import { baseRange, baseCoverageAmount } from '../static/dashboard'
 import { UserContext } from './UserContext'
-
-const baseCoverageAmount = 20
 
 export const UserProvider = ({ children }) => {
 
   const [user, setUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
-  const [insured, setInsured] = useState(16000)
+  const [insured, setInsured] = useState(baseRange.min)
   const [coverageSubTotal, setCoverageSubTotal] = useState([])
   const [coverageTotal, setCoverageTotal] = useState(baseCoverageAmount)
 
   const authUser = async (typeDocument, document, phone, license, terms) => {
     setIsLoading(true)
     try {
-      const userData = await UserService.getUser(document)
+      const formatDocument = document.split("")[document.length - 1]
+      const userData = await UserService.getUser(formatDocument)
       const userFormat = {
         ...userData,
         document,
@@ -50,6 +50,13 @@ export const UserProvider = ({ children }) => {
     coverageSubTotal.length > 1 && processSubTotal(coverageSubTotal, amount)
   }
 
+  const resetProfile = () => {
+    setUser(null)
+    setInsured(baseRange.min)
+    setCoverageSubTotal([])
+    setCoverageTotal(baseCoverageAmount)
+  }
+
   return (
     <UserContext.Provider
       value={
@@ -61,7 +68,8 @@ export const UserProvider = ({ children }) => {
           coverageTotal,
           processSubTotal,
           changeInsured,
-          authUser
+          authUser,
+          resetProfile
         }
       }
     >

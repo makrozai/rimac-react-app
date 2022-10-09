@@ -1,22 +1,32 @@
-import { Button, Grid, Typography, useMediaQuery, useTheme } from '@mui/material'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { UserContext } from '../../context/UserContext'
+import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../../components'
 
 import bannerResult from '../../assets/banner_result.svg'
 import bannerResultMobile from '../../assets/banner_result__mobile.svg'
 
 import './Result.scss'
+import { formatCurrency } from '../../utils'
 
 export const Result = () => {
 
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up("md"))
 
-  const { user, insured, coverageSubTotal, coverageTotal } = useContext(UserContext)
+  const { user, insured, coverageSubTotal, coverageTotal, resetProfile } = useContext(UserContext)
+  const [dialog, setDialog] = useState(false)
+  const navigate = useNavigate()
 
   const handleSubmit = () => {
-    console.log({ user, insured, coverageSubTotal, coverageTotal })
+    setDialog(true)
+  }
+
+  const handleClose = () => {
+    setDialog(false)
+    resetProfile()
+    navigate('/')
   }
   
   return (
@@ -74,6 +84,43 @@ export const Result = () => {
           </Grid>
         )
       }
+      <Dialog
+        open={ dialog }
+        onClose={ () => setDialog(false) }
+      >
+        <DialogTitle>Informacion de cotizacion</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Nombre: { user.name }
+          </DialogContentText>
+          <DialogContentText>
+            Email: { user.email }
+          </DialogContentText>
+          <DialogContentText>
+            Celular: { user.mobilePhone }
+          </DialogContentText>
+          <DialogContentText>
+            Placa: { user.license }
+          </DialogContentText>
+          <DialogContentText>
+            { user.typeDocument }: { user.document }
+          </DialogContentText>
+          <DialogContentText>
+            Pago mensual: { formatCurrency(coverageTotal) }
+          </DialogContentText>
+          <DialogContentText>
+            Suma asegurada: { formatCurrency(insured, 0) }
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={ handleClose }
+            color='secondary'
+          >
+            Hacer otra Cotizacion
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Grid>
   )
 }
