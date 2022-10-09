@@ -32,4 +32,6 @@ export const Navbar = ({ position = 'static' }) => {
   )
 }
 
-Navbar.propTypes = {}
+Navbar.propTypes = {
+  position: PropTypes.string
+}

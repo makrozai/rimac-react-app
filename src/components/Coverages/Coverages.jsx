@@ -53,4 +53,8 @@ export const Coverages = ({ coverageItems, onCoverageSelected, insuredAmount }) 
   )
 }
 
-Coverages.propTypes = {}
+Coverages.propTypes = {
+  coverageItems: PropTypes.array.isRequired,
+  onCoverageSelected: PropTypes.func.isRequired,
+  insuredAmount: PropTypes.number.isRequired
+}

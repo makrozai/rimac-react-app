@@ -52,5 +52,6 @@ export const StepperCotizer = ({ steps, selectStep }) => {
 }
 
 StepperCotizer.propTypes = {
+  steps: PropTypes.array.isRequired,
   selectStep: PropTypes.number.isRequired
 }

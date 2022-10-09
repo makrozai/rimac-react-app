@@ -50,4 +50,4 @@ export const IosSwitch = styled((props) => (
       duration: 500,
     }),
   },
-}));
+}))

@@ -1,3 +1,8 @@
+import iconPerdidatotal from '../assets/icon_perdidatotal.svg'
+import iconDamage from '../assets/icon_damage.svg'
+import iconTheft from '../assets/icon_theft.svg'
+
+
 export const steps = ['Datos', 'Arma tu plan']
 
 export const coverageItems = [

@@ -57,4 +57,7 @@ export const CoverageTotal = ({ amount, onSubmit }) => {
   )
 }
 
-CoverageTotal.propTypes = {}
+CoverageTotal.propTypes = {
+  amount: PropTypes.number.isRequired,
+  onSubmit: PropTypes.func.isRequired
+}

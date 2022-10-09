@@ -58,4 +58,9 @@ export const InsuredCounter = ({ min, max, defaultAmount, onChangeAmount }) => {
   )
 }
 
-InsuredCounter.propTypes = {}
+InsuredCounter.propTypes = {
+  min: PropTypes.number.isRequired,
+  max: PropTypes.number.isRequired,
+  defaultAmount: PropTypes.number.isRequired,
+  onChangeAmount: PropTypes.func.isRequired
+}

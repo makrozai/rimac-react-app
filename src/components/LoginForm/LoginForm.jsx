@@ -7,7 +7,7 @@ import { UserContext } from '../../context/UserContext'
 
 import './LoginForm.css'
 
-export const LoginForm = ({ }) => {
+export const LoginForm = () => {
   
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up("md"))
@@ -128,5 +128,3 @@ export const LoginForm = ({ }) => {
     </div>
   )
 }
-
-LoginForm.propTypes = {}
