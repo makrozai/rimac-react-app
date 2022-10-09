@@ -6,7 +6,7 @@ import BannerDesktop from '../../assets/banner_desktop.svg'
 import BannerMobile from '../../assets/banner_mobile.svg'
 import BannerWallpaper from '../../assets/banner_wallpaper.svg'
 
-import './Banner.css'
+import './Banner.scss'
 
 export const Banner = ({ tag, title, description }) => {
 

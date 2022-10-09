@@ -1,0 +1,48 @@
+.insured-counter {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #E4E8F7;
+  padding: 4rem 0;
+
+  &__legend {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      margin: 0 .5rem;
+    }
+    h6 {
+      width: 100%;
+      margin-bottom: .3rem;
+      color: #494F66;
+    }
+  }
+  &__field {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 0 1px #C5CBE0 inset;
+    border-radius: 8px;
+    height: 56px;
+  }
+  &--mobile {
+    flex-direction: column;
+    border-bottom: 0px solid #E4E8F7;
+    padding: 3rem 0;
+
+    .insured-counter__legend {
+      width: 100%;
+      justify-content: flex-start;
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+    .insured-counter__field {
+      width: 100%;
+    }
+  }
+}

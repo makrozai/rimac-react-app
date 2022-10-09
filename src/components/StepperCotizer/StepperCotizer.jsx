@@ -4,7 +4,7 @@ import { IconButton, LinearProgress, Step, StepLabel, Stepper, Typography, useMe
 
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 
-import './StepperCotizer.css'
+import './StepperCotizer.scss'
 import { useNavigate } from 'react-router-dom'
 
 export const StepperCotizer = ({ steps, selectStep }) => {

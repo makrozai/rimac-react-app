@@ -10,7 +10,7 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
-import './CoverageItem.css'
+import './CoverageItem.scss'
 
 export const CoverageItem = ({ items, onCoverageSelected }) => {
 

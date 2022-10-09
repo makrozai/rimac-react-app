@@ -6,7 +6,7 @@ import { Navbar } from '../../components'
 import bannerResult from '../../assets/banner_result.svg'
 import bannerResultMobile from '../../assets/banner_result__mobile.svg'
 
-import './Result.css'
+import './Result.scss'
 
 export const Result = () => {
 

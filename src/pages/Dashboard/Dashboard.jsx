@@ -8,7 +8,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 
 import { steps, coverageItems, baseRange } from '../../static/dashboard'
 
-import './Dashboard.css'
+import './Dashboard.scss'
 
 export const Dashboard = () => {
 

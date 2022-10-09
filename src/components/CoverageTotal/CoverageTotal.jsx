@@ -5,7 +5,7 @@ import { formatCurrency } from '../../utils'
 
 import CheckIcon from '@mui/icons-material/Check'
 
-import './CoverageTotal.css'
+import './CoverageTotal.scss'
 
 export const CoverageTotal = ({ amount, onSubmit }) => {
 

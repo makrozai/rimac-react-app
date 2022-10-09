@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Box, Tab, Tabs, Typography, useMediaQuery, useTheme } from '@mui/material'
 import { TabPanel, CoverageItem } from '../'
 
-import './Coverages.css'
+import './Coverages.scss'
 
 export const Coverages = ({ coverageItems, onCoverageSelected, insuredAmount }) => {
 

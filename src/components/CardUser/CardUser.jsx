@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Typography, useMediaQuery, useTheme } from '@mui/material'
 import avatar from '../../assets/user.svg'
-import './CardUser.css'
+
+import './CardUser.scss'
 
 export const CardUser = ({ license, name }) => {
 

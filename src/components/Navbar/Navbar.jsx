@@ -4,7 +4,7 @@ import Logo from '../../assets/logo_rimac.svg'
 import { AppBar, Button, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material'
 import Phone from '@mui/icons-material/Phone'
 
-import './Navbar.css'
+import './Navbar.scss'
 
 export const Navbar = ({ position = 'static' }) => {
   
@@ -20,7 +20,7 @@ export const Navbar = ({ position = 'static' }) => {
         {
           matches ? (
             <>
-              <Button color="inherit" className='navbar__test'>¿Tienes alguna duda?</Button>
+              <Button color="inherit" className='navbar__lower'>¿Tienes alguna duda?</Button>
               <Button color="inherit" className='navbar__phone'><Phone /> (01) 411 6001</Button>
             </>
           ) : (

@@ -1,0 +1,65 @@
+.login-form {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+  color: #494F66;
+
+  &__title {
+    margin-bottom: 2rem;
+  }
+  &__group {
+    margin: .5rem 0;
+
+    &--document {
+      display: flex;
+      flex-direction: row !important;
+
+      .select {
+        border-radius: 4px 0 0 4px;
+      }
+      .input {
+        flex-grow: 1;
+
+        div {
+          border-radius: 0 4px 4px 0;
+
+          fieldset {
+            border-left-width: 0px;
+          }
+        }
+        &:hover div fieldset {
+          border-left-width: 1px;
+        }
+      }
+    }
+    &--checkbox {
+      color: #676F8F;
+      margin-top: 2rem;
+
+      .error {
+        margin-top: .5rem;
+        color: #d32f2f;
+      }
+    }
+  }
+  &__submit {
+    padding: 1rem 4rem !important;
+    min-height: 3.8rem;
+    margin-top: 2rem !important;
+  }
+  &--mobile {
+    height: auto;
+    padding: 2rem 1rem;
+
+    .login-form__title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .login-form__submit {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.stepper-cotizer {
+  margin: 0 auto;
+  max-width: 200px;
+  padding-top: 3rem;
+
+  &--mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 1rem;
+    background-color: white;
+
+    & > span {
+      width: 60%;
+    }
+  
+    & > p {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #676F8F;
+    }
+  
+    button {
+      color: #EDEFFC;
+      border: 1px solid #EDEFFC;
+      width: 1.7rem;
+      height: 1.7rem;
+    }
+  
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}

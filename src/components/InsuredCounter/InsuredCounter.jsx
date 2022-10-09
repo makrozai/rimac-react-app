@@ -6,7 +6,7 @@ import { formatCurrency } from '../../utils'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
 
-import './InsuredCounter.css'
+import './InsuredCounter.scss'
 
 const defaultAlterate= 100
 
@@ -43,7 +43,7 @@ export const InsuredCounter = ({ min, max, defaultAmount, onChangeAmount }) => {
           MAX { formatCurrency(max, 0) }
         </Typography>
       </div>
-      <div className='insured-counter__counter'>
+      <div className='insured-counter__field'>
         <IconButton color='primary' onClick={ handleDecrement } disabled={ !(amount > min) }>
           <RemoveIcon />
         </IconButton>

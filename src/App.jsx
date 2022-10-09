@@ -23,7 +23,7 @@ const theme = createTheme({
   }
 })
 
-function App() {
+const App = () => {
 
   return (
     <ThemeProvider theme={theme}>

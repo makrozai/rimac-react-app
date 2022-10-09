@@ -1,0 +1,23 @@
+.navbar {
+  background-color: transparent !important;
+  box-shadow: 0 0 0 transparent !important;
+  color: #676F8F !important;
+  border: 1px solid #E4E8F7;
+
+  &--fixed {
+    border: 1px solid transparent;
+  }
+  &__lower {
+    text-transform: initial !important;
+  }
+  &__phone {
+    color: #6F7DFF !important;
+    text-transform: capitalize;
+    font-size: 1rem;
+  }
+  &__phone {
+    svg {
+      margin-right: 7px;
+    }
+  }
+}

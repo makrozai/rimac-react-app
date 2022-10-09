@@ -5,7 +5,7 @@ import { Button, Checkbox, CircularProgress, FormControl, FormControlLabel, Form
 import { useForm } from '../../hooks/useForm'
 import { UserContext } from '../../context/UserContext'
 
-import './LoginForm.css'
+import './LoginForm.scss'
 
 export const LoginForm = () => {
   

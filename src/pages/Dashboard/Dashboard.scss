@@ -1,0 +1,72 @@
+.dashboard {
+  color: #676F8F;
+
+  &__navbar {
+    background-color: #F7F8FC;
+    width: 100%;
+  }
+
+  &__body {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem 6rem;
+
+    &--mobile {
+      max-width: 100%;
+      padding: 0 0 6rem;
+    }
+  
+    &--mobile main {
+      background-color: #F7F8FC;
+      padding: 3rem 1rem;
+    }
+  
+    &--mobile .dashboard__heading {
+      margin-top: 0;
+    }
+    &--mobile .dashboard__heading h4 {
+      color: #494F66;
+      font-size: 1.9rem;
+    }
+
+    &--mobile .dashboard__heading h6 {
+      font-size: 1.15rem;
+    }
+  }
+  &__back {
+    display: flex;
+    padding: 0;
+    margin-top: 3rem;
+    align-items: center;
+    color: #A9AFD9;
+    cursor: pointer;
+
+    .button {
+      color: #FC606B;
+      border: 1px solid #FC606B;
+      width: 1.7rem;
+      height: 1.7rem;
+      margin-right: .5rem;
+    }
+  
+    .button svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+  &__heading {
+    margin: 1.5rem 0;
+
+    span {
+      display: inline-block;
+      color: #FF1C44;
+      margin-bottom: .5rem;
+    }
+  }
+  &__amount {
+    padding-top: 3rem;
+  }
+  &__insured {
+    padding: 0 1rem;
+  }
+}

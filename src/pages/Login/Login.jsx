@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid } from '@mui/material'
 import { Banner, LoginForm, Navbar } from '../../components'
 
-import './Login.css'
+import './Login.scss'
 
 export const Login = () => {
 
